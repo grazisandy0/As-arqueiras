@@ -1,0 +1,303 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+:root {
+  --bg: #14021f;
+  --roxo-neon: #b86bff;
+  --roxo-escuro: #1e0530;
+  --amarelo: #f7d445;
+  --txt: #ffffff;
+}
+
+/* BODY */
+body {
+  background: var(--bg);
+  color: var(--txt);
+  overflow-x: hidden;
+}
+
+/* HERO */
+.hero {
+  height: 90vh;
+  background: 
+      linear-gradient(rgba(10,0,15,0.7), rgba(10,0,15,0.8)),
+      url("https://images6.alphacoders.com/133/1339788.jpeg") center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 80px;
+}
+
+.hero-content h2 {
+  font-size: 60px;
+  text-shadow: 0px 0px 20px var(--roxo-neon);
+  margin-bottom: 15px;
+}
+
+.hero-content p {
+  font-size: 22px;
+  margin-bottom: 25px;
+  opacity: 0.9;
+}
+
+.btn-hero {
+  background: var(--roxo-neon);
+  padding: 12px 40px;
+  border-radius: 8px;
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+  transition: .3s;
+}
+
+.btn-hero:hover {
+  background: var(--amarelo);
+}
+
+/* SEÇÃO JOGADORAS */
+.sobre {
+  padding: 60px 40px;
+}
+
+.section-title {
+  text-align: center;
+  color: var(--amarelo);
+  font-size: 34px;
+  margin-bottom: 35px;
+  text-shadow: 0 0 10px rgba(255,255,255,0.2);
+}
+
+.cards-sobre {
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+  flex-wrap: wrap;
+}
+
+.j-card {
+  width: 300px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(8px);
+  transition: .3s;
+}
+
+.j-card img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+}
+
+.j-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 20px var(--roxo-neon);
+}
+
+.j-card h3 {
+  padding: 10px;
+  font-size: 20px;
+  color: var(--roxo-neon);
+}
+
+.j-card p {
+  padding: 0 10px 15px;
+  opacity: 0.8;
+}
+
+/* SEÇÃO NOTÍCIAS */
+.news {
+  padding: 50px 40px;
+}
+
+.news-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.n-card {
+  width: 320px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: .3s;
+  margin-bottom: 20px;
+}
+
+.n-card img {
+  width: 100%;
+}
+
+.n-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 15px var(--roxo-neon);
+}
+
+.n-card h3 {
+  padding: 12px;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 25px;
+  opacity: 0.5;
+  margin-top: 40px;
+}
+
+/* NAVBAR */
+.header {
+  width: 100%;
+  background: #2b0040;
+  padding: 12px 40px;
+  display: flex;
+  justify-content: center;
+  border-bottom: 3px solid var(--amarelo);
+}
+
+.navbar {
+  width: 100%;
+  max-width: 1500px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-area img {
+  height: 55px;
+}
+
+.menu {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+.menu li a {
+  color: var(--amarelo);
+  font-size: 0.95rem;
+  text-decoration: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: 0.2s ease-in-out;
+}
+
+.menu li a:hover {
+  color: #ffffff;
+  text-shadow: 0px 0px 6px var(--amarelo);
+}
+
+.icons-right {
+  display: flex;
+  gap: 18px;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  padding: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.icon-btn:hover svg {
+  opacity: 0.7;
+  filter: drop-shadow(0 0 4px var(--amarelo));
+}
+
+/* CARROSSEL */
+.carousel {
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+  margin-top: 120px;
+  border-bottom: 3px solid var(--amarelo);
+}
+
+.carousel-track {
+  display: flex;
+  width: 300%;
+  animation: slide 12s infinite;
+}
+
+.carousel-img {
+  width: 100%;
+  object-fit: cover;
+}
+
+@keyframes slide {
+  0%   { transform: translateX(0%); }
+  33%  { transform: translateX(0%); }
+  40%  { transform: translateX(-100%); }
+  66%  { transform: translateX(-100%); }
+  73%  { transform: translateX(-200%); }
+  100% { transform: translateX(-200%); }
+}
+
+/* RESPONSIVIDADE */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .hero-content h2 {
+    font-size: 45px;
+  }
+
+  .hero-content p {
+    font-size: 18px;
+  }
+
+  .cards-sobre, .news-container {
+    gap: 20px;
+  }
+
+  .j-card, .n-card {
+    width: 45%;
+  }
+}
+
+/* Celulares */
+@media (max-width: 768px) {
+  .header {
+    padding: 12px 20px;
+  }
+
+  .menu {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .cards-sobre, .news-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .j-card, .n-card {
+    width: 90%;
+  }
+
+  .hero-content h2 {
+    font-size: 32px;
+  }
+
+  .hero-content p {
+    font-size: 16px;
+  }
+
+  .btn-hero {
+    padding: 10px 25px;
+  }
+
+  .carousel {
+    height: 400px;
+    margin-top: 80px;
+  }
+}

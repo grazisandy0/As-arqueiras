@@ -1,0 +1,183 @@
+/* ------ MENU SUPERIOR CLOUD9 ------ */
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 40px;
+    background: #2e0059; /* Roxo escuro */
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.menu .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #f1c40f; /* Amarelo */
+}
+
+.menu-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.menu-title {
+    color: #f1c40f;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* ------ DROPDOWN PRINCIPAL (Loja) ------ */
+.loja-dropdown {
+    position: relative;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    background: #fff;
+    color: #000;
+    top: 40px;
+    left: 0;
+    width: 230px;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.dropdown.open {
+    display: block;
+}
+
+/* ------ BOTÕES DO DROPDOWN ------ */
+.dropdown-btn {
+    width: 100%;
+    padding: 10px;
+    font-weight: bold;
+    background: #f2f2f2;
+    border: none;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    border-radius: 5px;
+    position: relative;
+}
+
+/* SETA ROTACIONANDO */
+.dropdown-btn::after {
+    content: "▼";
+    position: absolute;
+    right: 10px;
+    transition: 0.3s;
+}
+
+.dropdown-btn.active::after {
+    transform: rotate(-90deg);
+}
+
+/* SUB-MENUS */
+.sub-dropdown {
+    display: none;
+    margin-left: 10px;
+    padding-left: 10px;
+    border-left: 3px solid #ddd;
+}
+
+.sub-dropdown.open {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.sub-dropdown a {
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 4px;
+    color: #333;
+}
+
+.sub-dropdown a:hover {
+    background: #eee;
+}
+
+/* ------ ÁREA DE FILTROS (LOUD) ------ */
+.filtros {
+    background: #2e0059;
+    padding: 25px;
+    margin: 20px auto;
+    width: 90%;
+    border-radius: 10px;
+    color: #fff;
+}
+
+.filtros h2 {
+    margin-bottom: 15px;
+}
+
+.filter-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.filter-grid label {
+    display: flex;
+    flex-direction: column;
+    font-size: 1rem;
+}
+
+select {
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    margin-top: 6px;
+}
+
+.btn-limpar {
+    margin-top: 20px;
+    padding: 10px 18px;
+    background: #ff5b5b;
+    color: white;
+    border: none;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.btn-limpar:hover {
+    opacity: 0.8;
+}
+
+/* ------ GRID DE PRODUTOS (CLOUD9) ------ */
+.produtos {
+    width: 90%;
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap: 25px;
+}
+
+.produto-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    text-align: center;
+    padding-bottom: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.produto-card:hover {
+    transform: translateY(-5px);
+}
+
+.produto-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}

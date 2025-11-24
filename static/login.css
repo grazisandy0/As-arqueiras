@@ -1,0 +1,103 @@
+/* AUTH.CSS — Estilo para Login & Cadastro inspirado em LOUD / CLOUD9 / 100T */
+
+:root {
+    --bg: #14021f;
+    --roxo-escuro: #1e0530;
+    --roxo-neon: #b86bff;
+    --amarelo: #f7d445;
+    --txt: #ffffff;
+  }
+  
+  body {
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+    background: var(--bg);
+    color: var(--txt);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  /* CONTAINER GERAL */
+  .auth-container {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 40px;
+    width: 420px;
+    border-radius: 14px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    border: 2px solid var(--roxo-neon);
+  }
+  
+  .auth-container h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: var(--amarelo);
+    text-shadow: 0 0 8px var(--amarelo);
+  }
+  
+  /* CAMPOS */
+  .auth-container label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 8px;
+    margin-top: 15px;
+  }
+  
+  .auth-container input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    background: #2b0040;
+    color: var(--txt);
+    font-size: 15px;
+    border: 2px solid transparent;
+    transition: 0.3s;
+  }
+  
+  .auth-container input:focus {
+    border-color: var(--amarelo);
+    box-shadow: 0 0 8px var(--amarelo);
+  }
+  
+  /* BOTÃO */
+  .btn-auth {
+    width: 100%;
+    margin-top: 25px;
+    padding: 14px;
+    background: var(--amarelo);
+    color: #000;
+    font-weight: 800;
+    border: none;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .btn-auth:hover {
+    background: var(--roxo-neon);
+    color: #000;
+  }
+  
+  /* TROCAR ENTRE LOGIN / CADASTRO */
+  .auth-switch {
+    margin-top: 18px;
+    text-align: center;
+    font-size: 14px;
+  }
+  
+  .auth-switch a {
+    color: var(--amarelo);
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+  
+  .auth-switch a:hover {
+    text-shadow: 0 0 6px var(--amarelo);
+  }
+  
