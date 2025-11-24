@@ -1,0 +1,118 @@
+<!-- Estrutura inicial da página da loja -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja - As Arqueiras</title>
+    <link rel="stylesheet" href="loja.css">
+    <script src="loja.js"></script>
+</head>
+<body>
+    <div id="header-container"></div>
+
+<script>
+    fetch("header.html")
+        .then(res => res.text())
+        .then(html => {
+            document.getElementById("header-container").innerHTML = html;
+        });
+</script>
+
+
+    <!-- MENU SUPERIOR -->
+    <header class="menu">
+        <div class="logo">AS ARQUEIRAS</div>
+
+        <nav class="menu-links">
+            <div class="menu-item loja-dropdown">
+                <span class="menu-title">Loja</span>
+                <div class="dropdown">
+                    <div class="dropdown-section">
+                        <button class="dropdown-btn">Vestuário ▸</button>
+                        <div class="sub-dropdown">
+                            <a href="#">Camisetas</a>
+                            <a href="#">Moletom</a>
+                            <a href="#">Bonés</a>
+                        </div>
+                    </div>
+
+                    <div class="dropdown-section">
+                        <button class="dropdown-btn">Coleções ▸</button>
+                        <div class="sub-dropdown">
+                            <a href="#">Edição Limitada</a>
+                            <a href="#">Especiais</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <a href="#" class="menu-title">Notícias</a>
+            <a href="#" class="menu-title">Sobre as Arqueiras</a>
+            <a href="#" class="menu-title">Pesquisar</a>
+            <a href="#" class="menu-title">Login</a>
+            <a href="#" class="menu-title">Carrinho</a>
+        </nav>
+    </header>
+
+    <!-- FILTROS (estilo LOUD) -->
+    <section class="filtros">
+        <h2>Filtros</h2>
+        <div class="filter-grid">
+            <label>
+                Categoria:
+                <select>
+                    <option>Todos</option>
+                    <option>Camisetas</option>
+                    <option>Moletons</option>
+                    <option>Bonés</option>
+                </select>
+            </label>
+
+            <label>
+                Tamanho:
+                <select>
+                    <option>Todos</option>
+                    <option>P</option>
+                    <option>M</option>
+                    <option>G</option>
+                    <option>GG</option>
+                </select>
+            </label>
+
+            <label>
+                Ordenar:
+                <select>
+                    <option>Relevância</option>
+                    <option>Preço: menor para maior</option>
+                    <option>Preço: maior para menor</option>
+                    <option>Lançamentos</option>
+                </select>
+            </label>
+        </div>
+    </section>
+
+
+    <!-- LISTA DE PRODUTOS (estilo Cloud9) -->
+    <section class="produtos">
+        <div class="produto-card">
+            <img src="https://via.placeholder.com/300" alt="Produto">
+            <h3>Camiseta Oficial</h3>
+            <p class="preco">R$ 129,90</p>
+        </div>
+
+        <div class="produto-card">
+            <img src="https://via.placeholder.com/300" alt="Produto">
+            <h3>Moletom Premium</h3>
+            <p class="preco">R$ 249,90</p>
+        </div>
+
+        <div class="produto-card">
+            <img src="https://via.placeholder.com/300" alt="Produto">
+            <h3>Boné Exclusivo</h3>
+            <p class="preco">R$ 99,90</p>
+        </div>
+    </section>
+
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phoenix Rise - Home</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+
+    <!-- MENU -->
+    <div id="menu"></div>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Bem-vindo ao Phoenix Rise</h2>
+            <p>Acompanhe nossas jogadoras e últimas notícias do mundo dos eSports</p>
+            <a href="loja.html" class="btn-hero">Visitar Loja</a>
+        </div>
+    </section>
+
+    <!-- SEÇÃO JOGADORAS -->
+    <section class="sobre">
+        <h2 class="section-title">Nossas Jogadoras</h2>
+        <div class="cards-sobre">
+            <div class="j-card">
+                <img src="jogadora1.jpg" alt="Jogadora 1">
+                <h3>Jogadora 1</h3>
+                <p>Descrição breve sobre a jogadora.</p>
+            </div>
+            <div class="j-card">
+                <img src="jogadora2.jpg" alt="Jogadora 2">
+                <h3>Jogadora 2</h3>
+                <p>Descrição breve sobre a jogadora.</p>
+            </div>
+            <div class="j-card">
+                <img src="jogadora3.jpg" alt="Jogadora 3">
+                <h3>Jogadora 3</h3>
+                <p>Descrição breve sobre a jogadora.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO NOTÍCIAS -->
+    <section class="news">
+        <h2 class="section-title">Últimas Notícias</h2>
+        <div class="news-container">
+            <div class="n-card">
+                <img src="noticia1.jpg" alt="Notícia 1">
+                <h3>Título da Notícia 1</h3>
+                <p>Resumo da notícia 1.</p>
+            </div>
+            <div class="n-card">
+                <img src="noticia2.jpg" alt="Notícia 2">
+                <h3>Título da Notícia 2</h3>
+                <p>Resumo da notícia 2.</p>
+            </div>
+            <div class="n-card">
+                <img src="noticia3.jpg" alt="Notícia 3">
+                <h3>Título da Notícia 3</h3>
+                <p>Resumo da notícia 3.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CARROSSEL -->
+    <section class="carousel">
+        <div class="carousel-track">
+            <img src="carrossel1.jpg" alt="Imagem 1" class="carousel-img">
+            <img src="carrossel2.jpg" alt="Imagem 2" class="carousel-img">
+            <img src="carrossel3.jpg" alt="Imagem 3" class="carousel-img">
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        &copy; 2025 Phoenix Rise. Todos os direitos reservados.
+    </footer>
+
+    <!-- SCRIPT PARA CARREGAR MENU -->
+    <script>
+        fetch('menu.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('menu').innerHTML = data;
+            });
+    </script>
+
+</body>
+</html>

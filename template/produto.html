@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produto - As Arqueiras</title>
+    <link rel="stylesheet" href="produto.css">
+</head>
+
+<body>
+    <div id="header-container"></div>
+
+<script>
+    fetch("header.html")
+        .then(res => res.text())
+        .then(html => {
+            document.getElementById("header-container").innerHTML = html;
+        });
+</script>
+
+
+    <!-- CONTAINER PRINCIPAL -->
+    <section class="produto-container">
+
+        <!-- MINIATURAS À ESQUERDA -->
+        <div class="thumbnails">
+            <img src="https://via.placeholder.com/600x700?text=1" class="thumb active">
+            <img src="https://via.placeholder.com/600x700?text=2" class="thumb">
+            <img src="https://via.placeholder.com/600x700?text=3" class="thumb">
+        </div>
+
+        <!-- IMAGEM PRINCIPAL -->
+        <div class="img-principal">
+            <img id="imagem-grande" src="https://via.placeholder.com/600x700?text=1">
+        </div>
+
+        <!-- INFORMAÇÕES DO PRODUTO -->
+        <div class="info-produto">
+
+            <h1>Camiseta Oficial As Arqueiras</h1>
+            <p class="preco">R$ 129,90</p>
+
+            <!-- TAMANHOS -->
+            <h3>Tamanhos</h3>
+            <div class="tamanhos">
+                <button class="size-btn">P</button>
+                <button class="size-btn">M</button>
+                <button class="size-btn">G</button>
+                <button class="size-btn">GG</button>
+            </div>
+
+            <!-- QUANTIDADE (AGORA CORRETAMENTE POSICIONADA) -->
+            <div class="quantity-box">
+                <label for="quantity">Quantidade:</label>
+            
+                <div class="quantity-controls">
+                    <button class="qty-btn" id="qty-minus">−</button>
+                    <input type="number" id="quantity" value="1" min="1">
+                    <button class="qty-btn" id="qty-plus">+</button>
+                </div>
+            </div>
+
+            <button class="btn-comprar">COMPRAR</button>
+            <button class="add-cart-btn">Adicionar ao Carrinho</button>
+
+            <h3>Descrição</h3>
+            <p class="descricao">
+                Camiseta oficial feita em tecido premium respirável, ideal para eventos, jogos e uso diário.
+                Confortável, durável e com design exclusivo das Arqueiras.
+            </p>
+
+
+        </div>
+    </section>
+
+    <!-- PRODUTOS RECOMENDADOS -->
+    <section class="recomendados">
+        <h2>Recomendados para você</h2>
+
+        <div class="reco-grid">
+
+            <div class="card-reco">
+                <img src="https://via.placeholder.com/300">
+                <h3>Moletom Premium</h3>
+                <p class="preco">R$ 249,90</p>
+            </div>
+
+            <div class="card-reco">
+                <img src="https://via.placeholder.com/300">
+                <h3>Boné Exclusivo</h3>
+                <p class="preco">R$ 99,90</p>
+            </div>
+
+            <div class="card-reco">
+                <img src="https://via.placeholder.com/300">
+                <h3>Camiseta Ed. Limitada</h3>
+                <p class="preco">R$ 159,90</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SCRIPT DO PRODUTO -->
+    <script src="produto.js"></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="header-container"></div>
+
+<script>
+    fetch("header.html")
+        .then(res => res.text())
+        .then(html => {
+            document.getElementById("header-container").innerHTML = html;
+        });
+</script>
+
+
+    <div class="form-container">
+        <h2>Entrar</h2>
+
+        <input type="email" placeholder="E-mail">
+        <input type="password" placeholder="Senha">
+
+        <button>Login</button>
+
+        <a href="cadastro.html" class="alt-link">
+            Não tem conta? Cadastre-se
+        </a>
+    </div>
+
+</body>
+</html>
