@@ -1,118 +1,86 @@
-<!-- Estrutura inicial da página da loja -->
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loja - As Arqueiras</title>
-    <link rel="stylesheet" href="loja.css">
-    <script src="loja.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Loja - As Arqueiras</title>
+<link rel="stylesheet" href="loja.css">
 </head>
 <body>
-    <div id="header-container"></div>
 
-<script>
-    fetch("header.html")
-        .then(res => res.text())
-        .then(html => {
-            document.getElementById("header-container").innerHTML = html;
-        });
-</script>
+<!-- MENU FIXO -->
+<header class="top-menu">
+    <div class="logo"><a href="#">As Arqueiras</a></div>
+    <ul class="menu-links">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="loja.html">Loja</a></li>
+        <li><a href="noticias.html">Notícias</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+    </ul>
+    <div class="menu-right">
+        <a href="#" class="icon">🔍</a>
+        <a href="#" class="icon">🛒</a>
+        <a href="#" class="icon">👤</a>
+        <button class="hamburger">☰</button>
+    </div>
+</header>
 
+<h1 class="store-title">LOJA AS ARQUEIRAS</h1>
 
-    <!-- MENU SUPERIOR -->
-    <header class="menu">
-        <div class="logo">AS ARQUEIRAS</div>
+<!-- FILTRO E CONTADOR DE PRODUTOS -->
+<section class="filter-sort">
+    <div class="filter" id="openFilter">FILTRAR PRODUTOS</div>
+    <div class="product-count" id="productCount">3 PRODUTOS</div>
+</section>
 
-        <nav class="menu-links">
-            <div class="menu-item loja-dropdown">
-                <span class="menu-title">Loja</span>
-                <div class="dropdown">
-                    <div class="dropdown-section">
-                        <button class="dropdown-btn">Vestuário ▸</button>
-                        <div class="sub-dropdown">
-                            <a href="#">Camisetas</a>
-                            <a href="#">Moletom</a>
-                            <a href="#">Bonés</a>
-                        </div>
-                    </div>
+<!-- SIDEBAR DE FILTRO -->
+<div class="filter-overlay" id="filterOverlay"></div>
+<aside class="filter-sidebar" id="filterSidebar">
+    <div class="filter-header">
+        <h2>FILTRAR</h2>
+        <span class="close-filter" id="closeFilter">✕</span>
+    </div>
 
-                    <div class="dropdown-section">
-                        <button class="dropdown-btn">Coleções ▸</button>
-                        <div class="sub-dropdown">
-                            <a href="#">Edição Limitada</a>
-                            <a href="#">Especiais</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <div class="filter-section">
+        <h3>Preço Máximo</h3>
+        <input type="range" min="0" max="200" value="200" id="precoRange" class="range">
+        <span>R$ <span id="precoValor">200</span></span>
+    </div>
 
-            <a href="#" class="menu-title">Notícias</a>
-            <a href="#" class="menu-title">Sobre as Arqueiras</a>
-            <a href="#" class="menu-title">Pesquisar</a>
-            <a href="#" class="menu-title">Login</a>
-            <a href="#" class="menu-title">Carrinho</a>
-        </nav>
-    </header>
+    <div class="filter-section">
+        <h3>Tamanhos</h3>
+        <label><input type="checkbox" class="sizeFilter" value="P"> P</label>
+        <label><input type="checkbox" class="sizeFilter" value="M"> M</label>
+        <label><input type="checkbox" class="sizeFilter" value="G"> G</label>
+    </div>
 
-    <!-- FILTROS (estilo LOUD) -->
-    <section class="filtros">
-        <h2>Filtros</h2>
-        <div class="filter-grid">
-            <label>
-                Categoria:
-                <select>
-                    <option>Todos</option>
-                    <option>Camisetas</option>
-                    <option>Moletons</option>
-                    <option>Bonés</option>
-                </select>
-            </label>
+    <div class="filter-section">
+        <h3>Categoria</h3>
+        <label><input type="checkbox" class="categoryFilter" value="Camisa"> Camisas</label>
+    </div>
 
-            <label>
-                Tamanho:
-                <select>
-                    <option>Todos</option>
-                    <option>P</option>
-                    <option>M</option>
-                    <option>G</option>
-                    <option>GG</option>
-                </select>
-            </label>
+    <button id="clearFilters">Limpar Filtros</button>
+</aside>
 
-            <label>
-                Ordenar:
-                <select>
-                    <option>Relevância</option>
-                    <option>Preço: menor para maior</option>
-                    <option>Preço: maior para menor</option>
-                    <option>Lançamentos</option>
-                </select>
-            </label>
-        </div>
-    </section>
+<!-- GRID DE PRODUTOS -->
+<div class="products-grid" id="productsGrid">
+    <div class="product-card" data-name="Camiseta Arqueiras Alpha" data-price="129.9" data-size="M" data-category="Camisa" data-img="https://via.placeholder.com/240x300?text=Camiseta+1">
+        <img src="https://via.placeholder.com/240x300?text=Camiseta+1">
+        <p class="product-name">Camiseta Arqueiras Alpha</p>
+        <p class="product-price">R$ 129,90</p>
+    </div>
+    <div class="product-card" data-name="Camiseta Arqueiras Beta" data-price="149.9" data-size="G" data-category="Camisa" data-img="https://via.placeholder.com/240x300?text=Camiseta+2">
+        <img src="https://via.placeholder.com/240x300?text=Camiseta+2">
+        <p class="product-name">Camiseta Arqueiras Beta</p>
+        <p class="product-price">R$ 149,90</p>
+    </div>
+    <div class="product-card" data-name="Camiseta Arqueiras Gamma" data-price="99.9" data-size="P" data-category="Camisa" data-img="https://via.placeholder.com/240x300?text=Camiseta+3">
+        <img src="https://via.placeholder.com/240x300?text=Camiseta+3">
+        <p class="product-name">Camiseta Arqueiras Gamma</p>
+        <p class="product-price">R$ 99,90</p>
+    </div>
+</div>
 
-
-    <!-- LISTA DE PRODUTOS (estilo Cloud9) -->
-    <section class="produtos">
-        <div class="produto-card">
-            <img src="https://via.placeholder.com/300" alt="Produto">
-            <h3>Camiseta Oficial</h3>
-            <p class="preco">R$ 129,90</p>
-        </div>
-
-        <div class="produto-card">
-            <img src="https://via.placeholder.com/300" alt="Produto">
-            <h3>Moletom Premium</h3>
-            <p class="preco">R$ 249,90</p>
-        </div>
-
-        <div class="produto-card">
-            <img src="https://via.placeholder.com/300" alt="Produto">
-            <h3>Boné Exclusivo</h3>
-            <p class="preco">R$ 99,90</p>
-        </div>
-    </section>
-
+<script src="loja.js"></script>
 </body>
 </html>

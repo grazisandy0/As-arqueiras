@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Carrinho - Phoenix Rise</title>
+    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="carrinho.css">
+    <script src="auth.js"></script>
+    <script src="carrinho.js" defer></script>
+</head>
+
+<body onload="verificarLogin()">
+
+    <!-- MENU GLOBAL -->
+    <header>
+        <div class="left">
+            <img src="img/logo.jpeg" class="logo">
+            <nav>
+                <a href="home.html">Home</a>
+                <a href="loja.html">Loja</a>
+                <a href="noticias.html">Notícias</a>
+                <a href="sobre.html">Sobre</a>
+            </nav>
+        </div>
+
+        <div class="icons">
+            <i onclick="alert('Pesquisar...')">🔍</i>
+            <i onclick="window.location.href='carrinho.html'">🛒</i>
+            <i onclick="window.location.href='login.html'">👤</i>
+        </div>
+    </header>
+
+    <!-- CONTEÚDO -->
+    <section class="cart-container">
+
+        <h2 class="titulo">Seu Carrinho</h2>
+
+        <div class="cart-content">
+
+            <!-- LISTA DE PRODUTOS -->
+            <div class="cart-items" id="cart-items">
+                <!-- Produtos serão adicionados automaticamente pelo JS -->
+            </div>
+
+            <!-- RESUMO -->
+            <div class="cart-summary">
+                <h3>Resumo</h3>
+
+                <div class="linha">
+                    <span>Subtotal:</span>
+                    <span id="subtotal">R$ 0,00</span>
+                </div>
+
+                <div class="linha">
+                    <span>Frete:</span>
+                    <span id="frete">R$ 15,00</span>
+                </div>
+
+                <div class="linha total">
+                    <span>Total:</span>
+                    <span id="total">R$ 15,00</span>
+                </div>
+
+                <button class="btn-finalizar" onclick="finalizarCompra()">
+                    Finalizar Compra
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+</body>
+</html>
